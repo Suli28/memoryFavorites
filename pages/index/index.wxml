@@ -1,0 +1,67 @@
+<view id="top">
+
+  <!-- 顶部日期 -->
+  <view class="navbar">
+    <view class="img"><navigator open-type="navigate" url="../tips/tips" hover-class="none"> + </navigator> </view>
+      <view class="nowday">{{date}}</view>
+  </view>
+
+  <!-- 一言 -->
+  <view class="box">
+    <view class="container" bindtouchstart="tap" bindtouchmove="end" bindtouchend="end">
+        <view id="title">{{day}}</view>
+        <view id="content">{{content}}</view>
+        <view id="from">——— {{_from}}</view>
+
+        <!-- Toase -->
+        <view id="toast" wx:if="{{show}}">
+          <view class="content">{{content}}</view>
+          <view class="from">——— {{_from}}</view>
+        </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- top end -->
+
+<!-- tips begin -->
+    <!-- 每一条数据都有一个独立的年月日 -->
+    <view class="tips_box">
+        
+        <!-- 每个月份 -->
+        <view wx:for="{{all}}" wx:if="{{item.length == 0 ? false : true}}" wx:key="1">
+              <view class="date">· {{item[0].date.year}}年{{index+1}}月 ·</view>   
+              <!-- 当前月份的便签 -->
+              <view class="container">
+
+                  <!-- 每一个月份里面的每一项 -->
+                  <view class="item" wx:for="{{item}}" wx:for-item="_item" data-id="{{_item._id}}" bindtap="navigator" bindlongtap="longtap" wx:key="2">
+                    <view class="left">
+                      <text>{{_item.date.day}}</text>
+                      <text>{{_item.date.xingqi}}</text>
+                      <text>{{_item.date.hours}}: {{_item.date.min}}</text>
+                    </view>
+
+                    <view class="center">
+                        <input placeholder-class="place" placeholder="添加或修改标题" catchtap="javascript:;" bindconfirm="setTitle" data-id="{{_item._id}}" value="{{_item.title == undefined ? '' : _item.title}}"></input>
+                        <view>{{_item.text}}</view>
+                    </view>
+
+                    <view class="right">
+                        <image src="{{_item.url}}" mode="scaleToFill"></image>
+                    </view>
+
+                  </view>
+
+               
+                  </view>
+
+              </view>
+        </view>
+
+       
+
+      
+    <!-- 将相同月份的数据 展示在同一个list中 -->
+<!-- tips end -->

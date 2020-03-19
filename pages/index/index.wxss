@@ -1,0 +1,177 @@
+/* 顶部 */
+#top{
+  width: 100%;
+  background-color: white;
+}
+.navbar{
+  height: 180rpx;
+  /* background-color: lightcoral; */
+  position: relative;
+}
+.navbar>.img{
+  position: absolute;
+  left: 20px;
+  top: 0rpx;
+
+  font-size: 80rpx;
+  font-weight: 100rpx;
+  line-height: 180rpx;
+}
+
+.nowday{
+    border: 1px solid #666;
+    border-top: none;
+    font-weight: 100;
+    width: 150rpx;
+    height: 100%;
+    font-size: 100rpx;
+    line-height: 180rpx;
+    box-sizing: border-box;
+    text-align: center;
+    margin:0 auto;
+}
+
+.box{
+  width: 100%;
+  height: 280rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box>.container{
+  width: 80%;
+  height: 85%;
+  /* background-color: lightcoral; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#title{
+  width: 100%;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  border-bottom: 1rpx solid #ddd;
+}
+#content{
+  /* 两端对齐 */
+  text-align: justify;
+
+  display: -webkit-box;
+
+  /* 文字垂直排列 */
+  -webkit-box-orient: vertical;
+  /* 最多显示3行 */
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+#from{
+  align-self: flex-end;
+}
+
+#toast{
+    padding: 30rpx;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  
+    width: 600rpx;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: rgba(0,0,0,.60);
+    color: #efefef;
+    font-weight: 100px;
+
+    border-radius: 8px;
+}
+#toast .from{
+    margin-top: 20rpx;
+    align-self: flex-end;
+}
+
+
+/* 便签的 */
+.tips_box{
+  width: 100%;
+  /* background-color: lightblue; */
+}
+.tips_box .date{
+  text-align: center;
+  padding: 10rpx 0;
+}
+.tips_box .container>.item{
+  height: 200rpx;
+  /* background-color: lightcoral; */
+  border-top: 1rpx solid #ddd;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+} 
+.tips_box .container>.item>.left{
+  width: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.tips_box .container>.item>.left::after{
+  content: "";
+  width: 2rpx;
+  height: 140rpx;
+  background-color: #ddd;
+  position: absolute;
+  right: 0;
+  top:0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+.tips_box .container>.item>.center{
+  width: 480rpx;
+  padding: 33rpx 20rpx;
+  box-sizing: border-box;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.tips_box .center view:last-child{
+  width: 440rpx;
+  height: 88rpx;
+
+display: -webkit-box;
+/* 文字的排列方式 */
+-webkit-box-orient: vertical;
+
+-webkit-line-clamp:2;
+
+overflow: hidden;
+}
+
+
+.tips_box .container>.item .place{
+  color:#666;
+}
+
+
+.tips_box .container>.item>.right{
+  width: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tips_box .container image{
+  width: 90%;
+  height: 90%;
+}
